@@ -1,0 +1,85 @@
+html{
+  height: 100vh;
+}
+body {
+  height: 100%;
+  background: #F0F2F5;
+}
+.margin-t-20{
+  margin-top: 20px;
+}
+.pointer {
+  cursor: pointer;
+}
+.page{
+  height: 100%;
+}
+.board {
+  border-radius: 5px;
+  background: white;
+  padding: 80px;
+  width: 100%;
+}
+.btnSelectRight{
+  padding: 10px !important;
+  color: #BBBBBB;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #ecf0f1;
+}
+.btnSelectRightBoth{
+  padding: 10px !important;
+  color: #BBBBBB;
+  border-radius:0 5px 5px 0;
+  border-top: 1px solid #ecf0f1;
+  border-right: 1px solid #ecf0f1;
+  border-bottom: 1px solid #ecf0f1;
+}
+.btnSelectMid{
+  padding: 10px !important;
+  color: #BBBBBB;
+  border-top: 1px solid #ecf0f1;
+  border-bottom: 1px solid #ecf0f1;
+}
+.btnSelectLeft{
+  padding: 10px !important;
+  color: #BBBBBB;
+  border-radius:0 5px 5px 0;
+  border: 1px solid #ecf0f1;
+}
+.btnSelectLeftBoth{
+  padding: 10px !important;
+  color: #BBBBBB;
+  border-radius:0 5px 5px 0;
+  border-radius: 5px 0 0 5px;
+  border-top: 1px solid #ecf0f1;
+  border-left: 1px solid #ecf0f1;
+  border-bottom: 1px solid #ecf0f1;
+}
+.btnSelect{
+  width: 100%;
+}
+
+.brut{
+  background: #FAFBFC;
+  padding: 20px !important;
+  height: 200px;
+}
+.net{
+  background: #FAFBFC;
+  padding: 20px !important;
+  height: 200px;
+}
+.btnSelected {
+  /* L’ancienne syntaxe, préfixée et dépréciée, utilisée par les anciens navigateurs */
+  background: -prefixe-linear-gradient(top, #FA4148, #E12D2D);
+
+  /* La nouvelle syntaxe sans préfixe, utilisée par les navigateurs conformes
+     aux standards (Opera 12.1, IE 10, Firefox 16, Chrome 26, Safari 6.1) */
+  background: linear-gradient(to bottom, #FA4148, #E12D2D);
+  color: white;
+}
+.test {
+  border-bottom: none !important;
+  font-size: 50px !important;
+  margin-bottom: 0 !important;
+}
