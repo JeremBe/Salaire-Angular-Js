@@ -35,9 +35,9 @@
                   <div class="col s4">
                       <h6>SALAIRE</h6>
                       <div class="margin-t-20 btnSelect">
-                          <div ng-class="{btnSelected: period == 'an'}" class="col s4 btnSelectRight center-align pointer" ng-click='changePeriod("an")'>Annuel</div>
-                          <div ng-class="{btnSelected: period == 'mois'}" class="btnSelectMid col s4 center-align pointer" ng-click='changePeriod("mois")'>Mensuel</div>
-                          <div ng-class="{btnSelected: period == 'heure'}" class="btnSelectLeft col s4 center-align pointer" ng-click='changePeriod("heure")'>Horaire</div>
+                          <div ng-class="{btnSelected: period == 'annuel'}" class="col s4 btnSelectRight center-align pointer" ng-click='changePeriod("annuel")'>Annuel</div>
+                          <div ng-class="{btnSelected: period == 'mensuel'}" class="btnSelectMid col s4 center-align pointer" ng-click='changePeriod("mensuel")'>Mensuel</div>
+                          <div ng-class="{btnSelected: period == 'horaire'}" class="btnSelectLeft col s4 center-align pointer" ng-click='changePeriod("horaire")'>Horaire</div>
                       </div>
                   </div>
                   <div class="col s2">
@@ -66,12 +66,12 @@
                       </div>
                   </div>
                   <div class="col s6 btnSelectRight brut margin-t-20">
-                      <h6>SALAIRE BRUT</h6>
+                      <h6>SALAIRE BRUT <small>{{period}}</small></h6>
                       <h1 class="black-text" ng-click="updateBrut()" ng-if='showBrut'>{{salaire.brut}}</h1>
                       <h1 ng-if='!showBrut'><input placeholder="ex 40 000" type="text" ng-blur="changeBrut(brut)" ng-model='brut' class="test" id='brut'></h1>
                   </div>
                   <div class="col s6 btnSelectLeft net margin-t-20">
-                      <h6>SALAIRE NET</h6>
+                      <h6>SALAIRE NET <small>{{period}}</small></h6>
                       <h1 class="black-text">{{salaire.net}}</h1>
                   </div>
               </div>
