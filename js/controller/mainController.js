@@ -1,6 +1,6 @@
 function mainController($scope,$timeout) {
 
-    $scope.period = 'an';
+    $scope.period = 'annuel';
     $scope.salaire = {};
     $scope.info = {};
     $scope.info.mois = 12;
