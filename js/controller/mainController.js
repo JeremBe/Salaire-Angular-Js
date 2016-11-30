@@ -53,7 +53,7 @@ function mainController($scope,$timeout) {
     // ================= ==============
     $scope.changeNet = function(salaire) {
         $scope.showNet = true;
-        $scope.salaire.Net = salaire;
+        $scope.salaire.net = salaire;
         changeSalaireBrut(salaire);
     }
 
