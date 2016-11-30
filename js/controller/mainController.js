@@ -52,14 +52,14 @@ function mainController($scope,$timeout) {
     // ================= BRUT FUNCTIONS
     // ================= ==============
     $scope.changeNet = function(salaire) {
-        $scope.showBrut = true;
-        $scope.salaire.brut = salaire;
+        $scope.showNet = true;
+        $scope.salaire.Net = salaire;
         changeSalaireBrut(salaire);
     }
 
     $scope.updateNet = function() {
-        $scope.showBrut = false;
-        $scope.brut = $scope.salaire.brut;
+        $scope.showNet = false;
+        $scope.net = $scope.salaire.net;
         $timeout(function () {
           $('#net').focus();
         },100)
