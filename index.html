@@ -72,7 +72,8 @@
                   </div>
                   <div class="col s6 btnSelectLeft net margin-t-20">
                       <h6>SALAIRE NET <small>{{period}}</small></h6>
-                      <h1 class="black-text">{{salaire.net}}</h1>
+                      <h1 class="black-text" ng-click="update(showNet)">{{salaire.net}}</h1>
+                      <h1 ng-if='!showNet'><input placeholder="ex 40 000" type="text" ng-blur="changeBrut(brut)" ng-model='brut' class="test" id='brut'></h1>
                   </div>
               </div>
 
