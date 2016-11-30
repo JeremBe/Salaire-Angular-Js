@@ -2,6 +2,7 @@ function mainController($scope,$timeout) {
 
     $scope.period = 'annuel';
     $scope.salaire = {};
+    $scope.show = {};
     $scope.info = {};
     $scope.info.mois = 12;
     $scope.info.temps = 35;
@@ -43,6 +44,24 @@ function mainController($scope,$timeout) {
         $scope.brut = $scope.salaire.brut;
         $timeout(function () {
           $('#brut').focus();
+        },100)
+    }
+    // ================= END BRUT FUNCTIONS
+    // ================= ==================
+
+    // ================= BRUT FUNCTIONS
+    // ================= ==============
+    $scope.changeNet = function(salaire) {
+        $scope.showBrut = true;
+        $scope.salaire.brut = salaire;
+        changeSalaireBrut(salaire);
+    }
+
+    $scope.updateNet = function() {
+        $scope.showBrut = false;
+        $scope.brut = $scope.salaire.brut;
+        $timeout(function () {
+          $('#net').focus();
         },100)
     }
     // ================= END BRUT FUNCTIONS
