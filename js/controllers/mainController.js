@@ -9,20 +9,20 @@ function mainController($scope,$timeout) {
     $scope.info.charges = 20;
 
 
-
     $scope.changePeriod = function(period) {
         $scope.period = period;
     }
-
 
     // ================= CONVERT FUNCTIONS
     // ================= =================
     function changeSalaireNet(salaireBrut) {
         $scope.salaire.net = salaireBrut - (salaireBrut * 20 / 100);
+        $scope.showNet = true;
     }
 
     function changeSalaireBrut(salaireNet) {
         $scope.salaire.brut = salaireNet * 100 / 80;
+        $scope.showBrut = true;
     }
 
     // ================= END CONVERT FUNCTIONS
@@ -54,11 +54,14 @@ function mainController($scope,$timeout) {
     // ================= BRUT FUNCTIONS
     // ================= ==============
     $scope.changeNet = function(salaire) {
-        // changeSalaireBrut(salaire);
+        $scope.showNet = true;
+        $scope.salaire.net = salaire;
+        changeSalaireBrut(salaire);
     }
 
     $scope.updateNet = function() {
         $scope.showNet = false;
+        $scope.net = $scope.salaire.net;
         $timeout(function () {
           $('#net').focus();
         },100)

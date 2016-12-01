@@ -19,7 +19,8 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script src="js/libs/angular.min.js"></script>
-    <script src="js/controller/mainController.js"></script>
+    <script src="js/filters/milliers.js"></script>
+    <script src="js/controllers/mainController.js"></script>
     <script src="js/app.js"></script>
 
 
@@ -44,7 +45,7 @@
                       <h6>MOIS DE TRAVAIL</h6>
                       <div class="margin-t-20 btnSelect">
                         <div class="col s6 btnSelectLeftBoth center-align" ng-if="!showMois">12</div>
-                        <div class="col s6 btnSelectLeftBoth center-align" ng-if="showMois"><input placeholder="ex 40 000" type="text" ng-blur="changeMois(mois)" ng-keyup="changeMois(mois)" ng-model='mois' class="test" ng-if='!showBrut' id='mois'></div>
+                        <div class="col s6 btnSelectLeftBoth center-align" ng-if="showMois"><input placeholder="ex 40 000" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="text" ng-blur="changeMois(mois)" ng-keyup="changeMois(mois)" ng-model='mois' class="test" ng-if='!showBrut' id='mois'></div>
                         <div class="btnSelectRightBoth col s6 center-align">MOIS</div>
                       </div>
                   </div>
@@ -52,7 +53,7 @@
                       <h6>TEMPS DE TRAVAIL</h6>
                       <div class="margin-t-20 btnSelect">
                         <div class="col s6 btnSelectLeftBoth center-align" ng-if="!showTemps">12</div>
-                        <div class="col s6 btnSelectLeftBoth center-align" ng-if="showTemps"><input placeholder="ex 40 000" type="text" ng-blur="changeTemps(temps)" ng-model='temps' class="test" ng-if='!showBrut' id='temps'></div>
+                        <div class="col s6 btnSelectLeftBoth center-align" ng-if="showTemps"><input placeholder="ex 40 000" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="text" ng-blur="changeTemps(temps)" ng-model='temps' class="test" ng-if='!showBrut' id='temps'></div>
                         <div class="btnSelectRightBoth col s6 center-align">HEURES</div>
                       </div>
 
@@ -60,20 +61,20 @@
                   <div class="col s3">
                       <h6>CHARGES SALARIALES</h6>
                       <div class="margin-t-20 btnSelect">
-                        <div class="col s6 btnSelectLeftBoth center-align" ng-if="!showCharges">12</div>
-                        <div class="col s6 btnSelectLeftBoth center-align" ng-if="showCharges"><input placeholder="ex 40 000" type="text" ng-blur="changeCharges(brut)" ng-model='charges' class="test" ng-if='!showBrut' id='charges'></div>
+                        <div class="col s6 btnSelectLeftBoth center-align" ng-if="!showCharges">{{info.charges}}</div>
+                        <div class="col s6 btnSelectLeftBoth center-align" ng-if="showCharges"><input placeholder="ex 40 000" onkeypress='return event.charCode >= 48 && event.charCode <= 57' type="text" ng-blur="changeCharges(brut)" ng-model='charges' class="test" ng-if='!showBrut' id='charges'></div>
                         <div class="btnSelectRightBoth col s6 center-align">%</div>
                       </div>
                   </div>
                   <div class="col s6 btnSelectRight brut margin-t-20">
                       <h6>SALAIRE BRUT <small>{{period}}</small></h6>
-                      <h1 class="black-text" ng-click="updateBrut()" ng-if='showBrut'>{{salaire.brut}}</h1>
-                      <h1 ng-if='!showBrut'><input placeholder="ex 40 000" type="text" ng-blur="changeBrut(brut)" ng-model='brut' class="test" id='brut'></h1>
+                      <h1 class="black-text" ng-click="updateBrut()" ng-if='showBrut'>{{salaire.brut | milliers}}</h1>
+                      <h1 ng-if='!showBrut'><input placeholder="ex 40 000" type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model='salaire.brut' class="test" id='brut'></h1>
                   </div>
                   <div class="col s6 btnSelectLeft net margin-t-20">
                       <h6>SALAIRE NET <small>{{period}}</small></h6>
-                      <h1 class="black-text" ng-click="updateNet()" ng-if='showNet'>{{salaire.net}}</h1>
-                      <h1 ng-if='!showNet'><input placeholder="ex 40 000" type="text" ng-blur="changeNet(net)" ng-model='net' class="test" id='net'></h1>
+                      <h1 class="black-text" ng-click="updateNet()" ng-show='showNet'>{{salaire.net | milliers}}</h1>
+                      <h1 ng-show='!showNet'><input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-model='salaire.net' ng-keyup="changeNet(salaire.net)" ng-blur="update('showNet')" class="test" id='net' placeholder="ex 40 000"></h1>
                   </div>
               </div>
 
