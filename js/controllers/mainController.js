@@ -54,8 +54,6 @@ function mainController($scope,$timeout) {
     // ================= BRUT FUNCTIONS
     // ================= ==============
     $scope.changeNet = function(salaire) {
-        $scope.showNet = true;
-        $scope.salaire.net = salaire;
         changeSalaireBrut(salaire);
     }
 
